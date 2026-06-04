@@ -1,0 +1,26 @@
+[package]
+name = "fr-acc"
+version = "0.1.0"
+edition = "2024"
+authors = ["Sayed Anower <sayed.anower.17.2@gmail.com>"]
+readme = "README.md"
+
+[profile.release]
+opt-level = "z" 
+lto = true 
+panic = "abort"
+strip = true
+codegen-units = 1
+
+[dependencies]
+fr-rust = "0.1"
+
+# Actix ecosystem
+actix-web = "4.13"
+
+# Serialization / JSON handling
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Redis Management
+deadpool-redis = "0.23"
